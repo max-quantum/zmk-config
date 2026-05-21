@@ -53,12 +53,12 @@
                 raise_layer {
                         display-name = "Raise";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
+// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | DEL |
 // | SHFT |     |     |     |     |     |   |  -  |  =  |  \  |  [  |  ]  |  `   |
 // | CTRL |     |     |     |     |     |   |  _  |  +  |  |  |  {  |  }  |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
+   &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp DELETE
    &kp LSHFT &trans   &trans &trans   &trans   &trans       &kp MINUS &kp EQUAL &kp BSLH  &kp LBKT &kp RBKT &kp GRAVE
    &kp LCTRL &trans   &trans &trans   &trans   &trans       &kp UNDER &kp PLUS  &kp PIPE  &kp LBRC &kp RBRC &kp TILDE
                              &kp LGUI &trans &kp SPACE   &kp RET &trans &kp LALT
