@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: fff185eaee87b0cfe768d8f2a6f556c7e27d8f11
+      revision: main   # TEMP diagnostic: test default settings backend on latest ZMK (was fff185e...)
       import: app/west.yml
   self:
     path: config
