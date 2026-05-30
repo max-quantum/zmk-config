@@ -3,7 +3,6 @@
 include:
   - board: nice_nano@2.0.0//zmk
     shield: corne_left
-    snippet: zmk-usb-logging   # TEMP: USB CDC logging on central for bond debugging
   - board: nice_nano@2.0.0//zmk
     shield: corne_right
   - board: nice_nano@2.0.0//zmk
