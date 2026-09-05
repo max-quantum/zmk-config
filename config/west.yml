@@ -2,10 +2,47 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+
   projects:
+    # Pin Zephyr to an exact commit instead of the floating `v4.1.0+zmk-fixes`
+    # branch that zmk's own app/west.yml points at. West resolves a project name
+    # to its FIRST definition, and the top-level manifest (this file) outranks
+    # anything pulled in via `import:` -- so this entry wins over zmk's.
+    #
+    # This must mirror zmk's zephyr entry (remote + import name-blocklist),
+    # otherwise the Zephyr module set changes. Two deliberate differences:
+    #   - revision is a SHA, not the branch
+    #   - no `clone-depth: 1`; west only permits it when revision is a branch/tag
+    #
+    # 10ba6d0c = "Bluetooth: Controller: Fix prepare pipeline overflow"
+    #            (fixes ZMK split central lockups), 2026-08-13, branch head.
+    - name: zephyr
+      remote: zmkfirmware
+      revision: 10ba6d0cb38bc3d258775d27982f707599320085
+      import:
+        name-blocklist:
+          - ci-tools
+          - hal_altera
+          - hal_cypress
+          - hal_infineon
+          - hal_microchip
+          - hal_nxp
+          - hal_openisa
+          - hal_xtensa
+          - hal_st
+          - hal_ti
+          - loramac-node
+          - mcuboot
+          - mcumgr
+          - net-tools
+          - openthread
+          - edtt
+          - trusted-firmware-m
+
     - name: zmk
       remote: zmkfirmware
       revision: ed56d81db79cf3a6e5dc02697277c0fad880ad34
       import: app/west.yml
+
   self:
     path: config
